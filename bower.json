@@ -1,0 +1,11 @@
+{
+  "name": "purescript-benchmarking",
+  "private": true,
+  "dependencies": {
+    "purescript-benchotron": "^5.0.0",
+    "purescript-leibniz": "^2.0.0",
+    "purescript-exists": "^2.0.0",
+    "purescript-applicative-lists": "^0.1.0",
+    "purescript-const": "^2.0.0"
+  }
+}
