@@ -20,14 +20,14 @@ import FreeAp9ccd7db as FreeApOld
 import FreeAp71acf67 as FreeApNew
 
 max :: Int
-max = 100
+max = 2
 
 max2 :: Int
-max2 = 10
+max2 = 1
 
 benchRetractFreeAp :: Benchmark
 benchRetractFreeAp = mkBenchmark
-  { slug: "retractFreeAp"
+  { slug: "retractFreeAp-71acf67-9ccd7db-small"
   , title: "retractFreeAp (sequence [ FreeAp f a, ..., FreeAp f z ])"
   , sizes: (1..20) <#> (_ * max)
   , sizeInterpretation: "Number of elements in the array"
@@ -47,9 +47,9 @@ type A = { old :: Array (FreeApOld.FreeAp Identity Unit)
 
 benchFoldFreeAp :: Benchmark
 benchFoldFreeAp = mkBenchmark
-  { slug: "foldFreeAp"
+  { slug: "foldFreeAp-71acf67-9ccd7db-small"
   , title: "foldFreeAp (a -> a) (k <$> FreeAp f a <* FreeAp f b <* ... <* FreeAp f z)"
-  , sizes: (1..20) <#> (_ * max2)
+  , sizes: (1..12) <#> (_ * max2)
   , sizeInterpretation: "Number of elements in the array"
   , inputsPerSize: 1
   , gen: \n -> { old: _
