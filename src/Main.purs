@@ -25,13 +25,16 @@ max = 2
 max2 :: Int
 max2 = 1
 
+trials :: Int
+trials = 1000
+
 benchRetractFreeAp :: Benchmark
 benchRetractFreeAp = mkBenchmark
   { slug: "retractFreeAp-71acf67-9ccd7db-small"
   , title: "retractFreeAp (sequence [ FreeAp f a, ..., FreeAp f z ])"
   , sizes: (1..20) <#> (_ * max)
   , sizeInterpretation: "Number of elements in the array"
-  , inputsPerSize: 1
+  , inputsPerSize: trials
   , gen: \n -> { old: _
                , new: _
                } <$> vectorOf n (pure (FreeApOld.liftFreeAp (Identity unit)))
@@ -51,7 +54,7 @@ benchFoldFreeAp = mkBenchmark
   , title: "foldFreeAp (a -> a) (k <$> FreeAp f a <* FreeAp f b <* ... <* FreeAp f z)"
   , sizes: (1..12) <#> (_ * max2)
   , sizeInterpretation: "Number of elements in the array"
-  , inputsPerSize: 1
+  , inputsPerSize: trials
   , gen: \n -> { old: _
                , new: _
                } <$> vectorOf n (pure (FreeApOld.liftFreeAp (Identity unit)))
