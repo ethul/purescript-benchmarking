@@ -6,6 +6,7 @@
     "purescript-leibniz": "^2.0.0",
     "purescript-exists": "^2.0.0",
     "purescript-applicative-lists": "^0.1.0",
-    "purescript-const": "^2.0.0"
+    "purescript-const": "^2.0.0",
+    "purescript-day": "^7.0.0"
   }
 }
